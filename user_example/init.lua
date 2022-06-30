@@ -97,7 +97,11 @@ local config = {
       config.sources = {
         -- Set a formatter
         null_ls.builtins.formatting.rufo,
-        null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettier.with({
+          filetypes = {
+			"javascript","typescript","css","scss","html","json","yaml","markdown","graphql","md","txt",
+		},
+        }),
         -- Set a linter
         null_ls.builtins.diagnostics.rubocop,
       }
